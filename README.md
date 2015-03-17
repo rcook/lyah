@@ -34,4 +34,7 @@ and a weakness
   * http://www.reddit.com/r/haskell/comments/29jw0s/whats_wrong_with_string/cilp5hy
 * `"Steve Buscemi" !! 6`: index operator `!!` is _linear_ in `n` where `n` is the index
 * `head` is a fascinating function
+  * `head []` throws an exception
+  * Technical its type is `a` or &#22A5;
+
 
