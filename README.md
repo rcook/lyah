@@ -32,9 +32,14 @@ and a weakness
   * Text strings are nearly always treated a single object
   * Interesting language design choice
   * http://www.reddit.com/r/haskell/comments/29jw0s/whats_wrong_with_string/cilp5hy
-* `"Steve Buscemi" !! 6`: index operator `!!` is _linear_ in `n` where `n` is the index
+* `"Steve Buscemi" !! 6`: index operator `!!` is _linear_ in `n` where `n` is the
+  index
 * `head` is a fascinating function
   * `head []` throws an exception
-  * Technical its type is `a` or &#x22A5;
+  * Technically its type is `[a] -> a` but clever people like to throw the
+  &#x22A5; symbol and terms like _partial function_ around
+  * Although Haskell's type system is pretty strong, it is unable to encode the
+  fact that `head` does not terminate under certain conditions
+
 
 
