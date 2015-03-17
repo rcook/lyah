@@ -35,6 +35,6 @@ and a weakness
 * `"Steve Buscemi" !! 6`: index operator `!!` is _linear_ in `n` where `n` is the index
 * `head` is a fascinating function
   * `head []` throws an exception
-  * Technical its type is `a` or &#22A5;
+  * Technical its type is `a` or &#x22A5;
 
 
