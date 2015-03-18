@@ -12,6 +12,7 @@ http://learnyouahaskell.com/starting-out
 * Other GHCi commands not mentioned directly in chapter:
   * `:i` or `:info`: Gives fully qualified name of function
   * `:b` or `:browse`: Dump all symbols exported by given module
+  * `:q` or `:quit`: Closes GHCi down
 
 ### _Baby's first functions_
 
@@ -37,9 +38,7 @@ and a weakness
 * `head` is a fascinating function
   * `head []` throws an exception
   * Technically its type is `[a] -> a` but clever people like to throw the
-  &#x22A5; symbol and terms like _partial function_ around
+  &#x22A5; (bottom) symbol and terms like _partial function_ around
   * Although Haskell's type system is pretty strong, it is unable to encode the
   fact that `head` does not terminate under certain conditions
-
-
 
