@@ -1,4 +1,4 @@
-# Notes from _Learn You a Haskell for Great Good!_
+# Chapters 1 and 2
 
 ## _Starting Out_
 
