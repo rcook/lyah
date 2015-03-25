@@ -62,3 +62,56 @@ pack (x : xs) = packHelper x [x] xs
 encode :: Eq a => [a] -> [(Int, a)]
 encode xs = map (\zs@(y : ys) -> (length zs, y)) $ pack xs
 
+-- Problem 11
+data RleElement a = Multiple Int a | Single a deriving Show
+encodeModified :: Eq a => [a] -> [RleElement a]
+encodeModified xs = map (\(n, x) -> if n == 1 then Single x else Multiple n x) (encode xs)
+
+-- Problem 12
+decodeModified :: [RleElement a] -> [a]
+decodeModified [] = []
+decodeModified (x : xs) = helper x ++ decodeModified xs
+  where
+    helper :: RleElement a -> [a]
+    helper (Multiple n x) = replicate n x
+    helper (Single x) = [x]
+
+-- Problem 13
+encodeDirect :: Eq a => [a] -> [RleElement a]
+encodeDirect [] = []
+encodeDirect [x] = [Single x]
+encodeDirect (x : xs) =
+  let
+    ys = encodeDirect xs
+  in
+    case ys of
+      [] -> [Single x]
+      (Single z : zs) -> if x == z then Multiple 2 x : zs else Single x : ys
+      (Multiple n z : zs) -> if x == z then Multiple (n + 1) x : zs else Single x : ys
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
