@@ -89,29 +89,20 @@ encodeDirect (x : xs) =
       (Single z : zs) -> if x == z then Multiple 2 x : zs else Single x : ys
       (Multiple n z : zs) -> if x == z then Multiple (n + 1) x : zs else Single x : ys
 
+-- Problem 14
+dupli :: [a] -> [a]
+dupli [] = []
+dupli (x : xs) = x : x : dupli xs
 
+-- Problem 15
+repli :: [a] -> Int -> [a]
+repli [] _ = []
+repli (x : xs) n = replicate n x ++ repli xs n
 
+-- Problem 16
+dropEvery :: [a] -> Int -> [a]
+dropEvery [] _ = []
+dropEvery xs n = take (n - 1) xs ++ dropEvery (drop n xs) n
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Problem 17
 
